@@ -22,17 +22,19 @@ refs.startButton.addEventListener("click", onButtonStartClick);
 refs.stopButton.addEventListener("click", onButtonStopClick);
 
 function onButtonStartClick() {
-   
     timerId=setInterval(() => {
-
-        let i = randomIntegerFromInterval(0, colors.length - 1);
-        refs.body.style.backgroundColor = colors[i];
+      let i = randomIntegerFromInterval(0, colors.length - 1);
+      refs.body.style.backgroundColor = colors[i];
     }, intervalTime);
-    console.log(`Interval with id ${timerId}`);
-    
+
+  console.log(`Interval with id ${timerId}`);
+  refs.startButton.classList.add("disableButton");
 }
 
 function onButtonStopClick() {
+  if (refs.startButton.classList.contains("disableButton")) {
+    refs.startButton.classList.remove("disableButton");
+  }
     clearInterval(timerId);
     console.log(`Interval with id ${timerId} has stopped!`);
 }
