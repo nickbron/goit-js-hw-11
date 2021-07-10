@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import './sass/main.scss';
+import '../sass/main.scss';
 
 let varDate;
   let timeInterval;
