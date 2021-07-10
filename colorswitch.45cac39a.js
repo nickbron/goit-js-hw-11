@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"tZK6":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");const t=["#FFFFFF","#2196F3","#4CAF50","#FF9800","#009688","#795548"],o={body:document.body,startButton:document.querySelector('[data-action="start"]'),stopButton:document.querySelector('[data-action="stop"]')};let s=null;const n=1e3;function e(){s=setInterval(()=>{let s=l(0,t.length-1);o.body.style.backgroundColor=t[s]},n),console.log(`Interval with id ${s}`),o.startButton.classList.add("disableButton")}function a(){o.startButton.classList.contains("disableButton")&&o.startButton.classList.remove("disableButton"),clearInterval(s),console.log(`Interval with id ${s} has stopped!`)}o.startButton.addEventListener("click",e),o.stopButton.addEventListener("click",a);const l=(t,o)=>Math.floor(Math.random()*(o-t+1)+t);
 },{"./sass/main.scss":"clu1"}]},{},["tZK6"], null)
-//# sourceMappingURL=/goit-js-hw-11-color-switch/colorswitch.45cac39a.js.map
+//# sourceMappingURL=/goit-js-hw-11/colorswitch.45cac39a.js.map
