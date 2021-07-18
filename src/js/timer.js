@@ -50,17 +50,23 @@ function startTimer(e) {
   resetTimer();
   timeInterval = setInterval(() => {
     let ms = varDate.getTime() - new Date().getTime();
-
+    
     if (ms < 0) {
       resetTimer();
       return;
     }
+    
+    let timerConvert= convertMs(ms);
+    updateFaceTimer(timerConvert);
 
-    refs.days.textContent = pad(convertMs(ms).days);
-    refs.hours.textContent = pad(convertMs(ms).hours);
-    refs.mins.textContent = pad(convertMs(ms).minutes);
-    refs.secs.textContent = pad(convertMs(ms).seconds);
   }, 1000);
+}
+
+function updateFaceTimer({ days, hours, minutes, seconds } ) {
+  refs.days.textContent = pad(`${days}`);
+  refs.hours.textContent = pad(`${hours}`);
+  refs.mins.textContent = pad(`${minutes}`);
+  refs.secs.textContent = pad(`${seconds}`);
 }
 
 function pad(value) {
